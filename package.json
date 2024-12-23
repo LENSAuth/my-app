@@ -1,0 +1,28 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "Start using LENS with this template Node.js webapp.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LENSAuth/my-app.git"
+  },
+  "keywords": [
+    "template",
+    "app",
+    "authentication"
+  ],
+  "author": "Admin-Host",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LENSAuth/my-app/issues"
+  },
+  "homepage": "https://github.com/LENSAuth/my-app#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
