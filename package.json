@@ -16,7 +16,7 @@
     "authentication"
   ],
   "author": "Admin-Host",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/LENSAuth/my-app/issues"
   },
