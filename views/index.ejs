@@ -9,6 +9,7 @@
 	<h1><%= message %></h1>
 	<p id="domain">Domain: </p>
 	<p id="response">Response: </p>
+	<p id="server-response">Server Response: </p>
 </body>
 <script>
 	const url = 'https://lens.admin-host.com'; // LENS server URL
@@ -20,6 +21,18 @@
 		if (event.origin === url) {
 			console.log(event.data); // Log response in console
 			document.querySelector('#response').innerHTML += JSON.stringify(event.data); // Display response on screen
+			fetch('/', { // Send response to server
+				method: 'POST', // Send response as POST request
+				headers: {
+					'Content-Type': 'application/json' // Send response as JSON
+				},
+				body: JSON.stringify(event.data) // Send response data
+			}).then(response => response.json()).then(data => {
+				console.log(data); // Log server response in console
+				document.querySelector('#server-response').innerHTML += JSON.stringify(data); // Display server response on screen
+			}).catch(error => {
+				console.error('Error:', error); // Catch and log any error(s) in console
+			});
 		};
 	};
 	window.addEventListener('message', receiveMessage, false);
